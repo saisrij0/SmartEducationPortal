@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Course Enrollment">
+        <div class="slds-p-around_medium">
+            <!-- Available Courses -->
+            <lightning-combobox
+                label="Select Course"
+                value={selectedCourse}
+                options={courseOptions}
+                onchange={handleCourseChange}>
+            </lightning-combobox>
+
+            <!-- Enroll Button -->
+            <lightning-button
+                variant="brand"
+                label="Enroll"
+                onclick={handleEnroll}
+                class="slds-m-top_small">
+            </lightning-button>
+
+            <!-- Current Enrollments -->
+            <h3 class="slds-m-top_medium">My Enrollments</h3>
+            <template if:true={enrollments}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={enrollments}
+                    columns={columns}>
+                </lightning-datatable>
+            </template>
+        </div>
+    </lightning-card>
+</template>

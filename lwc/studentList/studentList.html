@@ -1,0 +1,16 @@
+<template>
+  <lightning-card title="Student List">
+    <template if:true={students}>
+      <ul>
+        <template for:each={students} for:item="student">
+          <li key={student.id}>
+            {student.name} — {student.email}
+          </li>
+        </template>
+      </ul>
+    </template>
+    <template if:true={error}>
+      <p>{error}</p>
+    </template>
+  </lightning-card>
+</template>

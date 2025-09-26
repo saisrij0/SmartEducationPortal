@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Student Applications">
+        <template if:true={applications}>
+            <lightning-datatable
+                key-field="Id"
+                data={applications}
+                columns={columns}
+                onsave={handleStatusChange}>
+            </lightning-datatable>
+        </template>
+        <template if:true={error}>
+            <p>{error}</p>
+        </template>
+    </lightning-card>
+</template>

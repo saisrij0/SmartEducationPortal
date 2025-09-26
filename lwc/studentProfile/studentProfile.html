@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Student Profile">
+        <template if:true={student.data}>
+            <div class="slds-p-around_small">
+                <p><strong>Name:</strong> {student.data.Name}</p>
+                <p><strong>Email:</strong> {student.data.Email__c}</p>
+                <p><strong>Phone:</strong> {student.data.Phone__c}</p>
+                <p><strong>DOB:</strong> {student.data.Date_of_Birth__c}</p>
+            </div>
+        </template>
+        <template if:true={student.error}>
+            <p>{student.error}</p>
+        </template>
+    </lightning-card>
+</template>
